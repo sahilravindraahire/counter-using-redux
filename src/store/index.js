@@ -14,11 +14,14 @@ const counterSlice = createSlice({
         },
         reset: (state) => {
             state.value = 0
+        },
+        togglePower: (state) => {
+            state.isOn = !state.isOn
         }
     }
 })
 
-export const {increase, decrease, reset} = counterSlice.actions
+export const {increase, decrease, reset, togglePower} = counterSlice.actions
 
 const store = configureStore({
     reducer: {
